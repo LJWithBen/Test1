@@ -116,7 +116,7 @@ class Operate{
 }
 
 
-public class Test{
+public class TestBackUP{
 	public static void main(String[]agre){
 		Operate o = new Operate(agre);
 		o.judge();
