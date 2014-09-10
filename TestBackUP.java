@@ -8,23 +8,17 @@ class Rectangular extends Shape{
 	private String str2 ;
 	private double x ;
 	private double y ;
-	public double calcx(){
-		x = Double.parseDouble(str1);
-		return x;
-	}
-	public double calcy(){
-		y = Double.parseDouble(str2);
-		return y;
-	}
 	public double area(){
-		return this.calcx()*this.calcy();
+		return x*y;
 	}
 	public double perimeter(){
-		return 2*(this.calcx()+this.calcy());
+		return 2*(x+y);
 	}
 	public Rectangular(String str1,String str2){
 		this.str1 = str1;
 		this.str2 = str2;
+		x = Double.parseDouble(str1);
+		y = Double.parseDouble(str2);
 	}
 }
 
@@ -40,48 +34,33 @@ class Triangle extends Shape{
 		this.str1 = str1;
 		this.str2 = str2;
 		this.str3 = str3;
-	}
-	public double calcx(){
 		x = Double.parseDouble(str1);
-		return x;
-	}
-	public double calcy(){
 		y = Double.parseDouble(str2);
-		return y;
-	}
-	public double calcz(){
 		z = Double.parseDouble(str3);
-		return z;	
-	}
-	public double calc(){
-		p = (this.calcx()+this.calcy()+this.calcz())/2;
-		return p;
+		p = (x+y+z)/2;
 	}
 	public double area(){
-		return Math.sqrt(this.calc()*((this.calc())-this.calcx())*((this.calc())-this.calcy())*((this.calc())-this.calcz()));
+		return Math.sqrt(p*(p-x)*(p-y)*(p-z));
 	}
 	public double perimeter(){
-		return this.calc()*2;
+		return p*2;
 	}
 
 }
 
 class Circle extends Shape{
 	private String str ;
+	private double r ;
 	public Circle(String str){
 		this.str = str;
+		r = Double.parseDouble(this.str);
 		System.out.println(this.str);
 	}
-	private double r ;
-	public double calc(){
-		r = Double.parseDouble(this.str);
-		return r;
-	}
 	public double area(){
-		return 3.14*this.calc()*this.calc();
+		return 3.14*r*r;
 	}
 	public double perimeter(){
-		return 2*3.14*this.calc();
+		return 2*3.14*r;
 	}
 	
 }
